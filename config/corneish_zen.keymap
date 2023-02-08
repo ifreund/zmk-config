@@ -24,23 +24,57 @@
 };
 
 / {
+  behaviors {
+    lmt: left_mod_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LEFT_MOD_TAP";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <200>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <
+         6  7  8  9 10 11
+        18 19 20 21 22 23
+        30 31 32 33 34 35
+        39 40 41
+      >;
+    };
+
+    rmt: right_mod_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "RIGHT_MOD_TAP";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <200>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <
+         0  1  2  3  4  5
+        12 13 14 15 16 17
+        24 25 26 27 28 29
+                 36 37 38
+      >;
+    };
+  };
+
   keymap {
     compatible = "zmk,keymap";
 
     base_layer {
+      label = "BASE";
       bindings = <
-        &kp TAB   &kp Q &kp W &kp F &kp P &kp G     &kp J &kp L &kp U     &kp Y   &kp SEMI &kp RET
-        &kp ESC   &kp A &kp R &kp S &kp T &kp D     &kp H &kp N &kp E     &kp I   &kp O    &kp SQT
-        &sk LSHFT &kp Z &kp X &kp C &kp V &kp B     &kp K &kp M &kp COMMA &kp DOT &kp FSLH &sk LSHFT
+        &kp TAB   &kp Q       &kp W       &kp F        &kp P        &kp G     &kp J &kp L        &kp U        &kp Y       &kp SEMI    &kp RET
+        &kp ESC   &lmt LGUI A &lmt LALT R &lmt LSHFT S &lmt LCTRL T &kp D     &kp H &rmt LCTRL N &rmt LSHFT E &rmt LALT I &rmt LGUI O &kp SQT
+        &sk LSHFT &kp Z       &kp X       &kp C        &kp V        &kp B     &kp K &kp M        &kp COMMA    &kp DOT     &kp FSLH    &sk LSHFT
 
         &none &mo NAV &kp BSPC     &kp SPACE &mo NUM &mo FUNC
       >;
     };
 
     num_layer {
+      label = "NUM";
       bindings = <
         &none &kp N1    &kp N2   &kp N3    &kp N4    &kp N5       &none    &kp LBRC  &kp LPAR  &kp RPAR &kp RBRC &none
-        &none &kp N6    &kp N7   &kp N8    &kp N9    &kp N0       &kp STAR &sk LCTRL &sk LSHFT &sk LALT &sk LGUI &kp GRAVE
+        &none &kp N6    &kp N7   &kp N8    &kp N9    &kp N0       &kp STAR &kp LCTRL &kp LSHFT &kp LALT &kp LGUI &kp GRAVE
         &none &kp TILDE &kp PLUS &kp MINUS &kp EQUAL &kp PIPE     &none    &kp UNDER &kp LBKT  &kp RBKT &kp BSLH &none
 
         &none &kp SPACE &kp BSPC     &kp SPACE &trans &none
@@ -48,9 +82,10 @@
     };
 
     nav_layer {
+      label = "NAV";
       bindings = <
         &none &none    &none    &none     &none     &none     &none     &none    &none      &none     &none     &none
-        &none &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &none     &caps_word &kp LEFT &kp DOWN   &kp UP    &kp RIGHT &none
+        &none &kp LGUI &kp LALT &kp LSHFT &kp LCTRL &none     &caps_word &kp LEFT &kp DOWN   &kp UP    &kp RIGHT &none
         &none &none    &none    &none     &none     &none     &none     &kp HOME &kp PG_DN  &kp PG_UP &kp END   &none
 
         &none &trans &none     &none &none &none
@@ -58,9 +93,10 @@
     };
 
     func_layer {
+      label = "FUNC";
       bindings = <
         &none &kp F1 &kp F2 &kp F3 &kp F4 &kp F5        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
-        &none &kp F6 &kp F7 &kp F8 &kp F9 &kp F10       &none        &sk LCTRL    &sk LSHFT    &sk LALT     &sk LGUI     &none
+        &none &kp F6 &kp F7 &kp F8 &kp F9 &kp F10       &none        &kp LCTRL    &kp LSHFT    &kp LALT     &kp LGUI     &none
         &none &none  &none  &none  &none  &kp PSCRN     &none        &none        &none        &none        &none        &none
 
         &none &none &none     &none &none &trans
@@ -68,12 +104,3 @@
     };
   };
 };
-
-/*
-layout:
-  ortho_layout:
-    split: true
-    rows: 3
-    columns: 6
-    thumbs: 3
-*/
