@@ -32,12 +32,16 @@
       flavor = "balanced";
       tapping-term-ms = <200>;
       bindings = <&kp>, <&kp>;
+      /*
+      This doesn't allow comfortable/fast ctrl+shift+v for example
+      TODO: fix this: https://github.com/zmkfirmware/zmk/blob/c065d451cb82e2dceda4efdb2991aeeeef1cdbbf/app/src/behaviors/behavior_hold_tap.c#L79
       hold-trigger-key-positions = <
          6  7  8  9 10 11
         18 19 20 21 22 23
         30 31 32 33 34 35
         39 40 41
       >;
+      */
     };
 
     rmt: right_mod_tap {
@@ -47,12 +51,14 @@
       flavor = "balanced";
       tapping-term-ms = <200>;
       bindings = <&kp>, <&kp>;
+      /*
       hold-trigger-key-positions = <
          0  1  2  3  4  5
         12 13 14 15 16 17
         24 25 26 27 28 29
                  36 37 38
       >;
+      */
     };
   };
 
