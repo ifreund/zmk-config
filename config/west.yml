@@ -1,11 +1,11 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    - name: ifreund
+      url-base: https://github.com/ifreund
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: ifreund
+      revision: personal
       import: app/west.yml
   self:
     path: config
