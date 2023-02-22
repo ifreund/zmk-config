@@ -68,7 +68,7 @@
         &kp ESC   &lmt LGUI A &lmt LALT R &lmt LSHFT S &lmt LCTRL T &kp D     &kp H &rmt LCTRL N &rmt LSHFT E &rmt LALT I &rmt LGUI O &kp SQT
         &sk LSHFT &kp Z       &kp X       &kp C        &kp V        &kp B     &kp K &kp M        &kp COMMA    &kp DOT     &kp FSLH    &sk LSHFT
 
-        &none &mo NAV &kp BSPC     &kp SPACE &mo NUM &mo FUNC
+        &none &sl NAV &kp BSPC     &kp SPACE &sl NUM &mo FUNC
       >;
     };
 
