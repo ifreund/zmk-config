@@ -75,9 +75,9 @@
     num_layer {
       label = "NUM";
       bindings = <
-        &none     &kp N1    &kp N2   &kp N3    &kp N4    &kp N5       &none    &kp LBRC  &kp LPAR  &kp RPAR &kp RBRC &none
-        &kp GRAVE &kp N6    &kp N7   &kp N8    &kp N9    &kp N0       &kp STAR &kp LCTRL &kp LSHFT &kp LALT &kp LGUI &none
-        &none     &kp TILDE &kp PLUS &kp MINUS &kp EQUAL &kp PIPE     &none    &kp UNDER &kp LBKT  &kp RBKT &kp BSLH &none
+        &kp GRAVE &kp N1    &kp N2   &kp N3    &kp N4    &kp N5       &none &kp LBRC  &kp LPAR  &kp RPAR &kp RBRC &none
+        &kp STAR  &kp N6    &kp N7   &kp N8    &kp N9    &kp N0       &none &kp LCTRL &kp LSHFT &kp LALT &kp LGUI &none
+        &none     &kp TILDE &kp PLUS &kp MINUS &kp EQUAL &kp PIPE     &none &kp UNDER &kp LBKT  &kp RBKT &kp BSLH &none
 
         &none &kp SPACE &kp BSPC     &kp SPACE &trans &none
       >;
