@@ -4,9 +4,10 @@
 
 #define CLMK 0
 #define GLLM 1
-#define NUM 2
-#define NAV 3
-#define FUNC 4
+#define QWRT 2
+#define NUM 3
+#define NAV 4
+#define FUNC 5
 
 / {
   chosen {
@@ -84,6 +85,17 @@
       >;
     };
 
+    qwrt_layer {
+      label = "QWRT";
+      bindings = <
+        &kp TAB &kp Q       &kp W       &kp E        &kp R        &kp T     &kp Y &kp U        &kp I        &kp O       &kp P          &kp RET
+        &kp ESC &lmt LGUI A &lmt LALT S &lmt LSHFT D &lmt LCTRL F &kp G     &kp H &rmt LCTRL J &rmt LSHFT K &rmt LALT L &rmt LGUI SEMI &kp SQT
+        &none   &kp Z       &kp X       &kp C        &kp V        &kp B     &kp N &kp M        &kp COMMA    &kp DOT     &kp FSLH       &none
+
+        &sl NAV &kp BSPC &sk LSHFT     &kp SPACE &sl NUM &mo FUNC
+      >;
+    };
+
     num_layer {
       label = "NUM";
       bindings = <
@@ -91,7 +103,7 @@
         &kp TILDE &kp N6    &kp N7   &kp N8    &kp N9    &kp N0       &none &kp LCTRL &kp LSHFT &kp LALT &kp LGUI &none
         &none     &kp STAR  &kp PLUS &kp MINUS &kp EQUAL &kp PIPE     &none &kp UNDER &kp LBKT  &kp RBKT &kp BSLH &none
 
-        &none &kp SPACE &kp BSPC     &kp SPACE &trans &none
+        &none &kp BSPC &kp SPACE     &kp SPACE &trans &none
       >;
     };
 
@@ -111,7 +123,7 @@
       bindings = <
         &none &kp F1  &kp F2  &kp F3 &kp F4 &kp F5        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
         &none &kp F6  &kp F7  &kp F8 &kp F9 &kp F10       &to CLMK     &kp LCTRL    &kp LSHFT    &kp LALT     &kp LGUI     &none
-        &none &kp F11 &kp F12 &none  &none  &kp PSCRN     &to GLLM     &none        &none        &none        &none        &none
+        &none &kp F11 &kp F12 &none  &none  &kp PSCRN     &to GLLM     &to QWRT     &none        &none        &none        &none
 
         &none &none &none     &none &none &trans
       >;
